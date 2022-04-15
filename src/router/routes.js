@@ -24,5 +24,6 @@ const routes = [
     path: "test2",
     child: [{ path: ":id", element: <Test21 /> }],
   },
+  { path: "", element: <Test1 /> },
 ];
 export default routes;

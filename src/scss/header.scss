@@ -1,0 +1,24 @@
+@mixin textColor($color) {
+    color: $color
+}
+.header{
+    background-color: #000000;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    .navs{
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+        &__tittle{
+              color: #fff;
+              cursor: pointer;
+              list-style: none;
+              margin: 0 10px;
+              &--active{
+                  color: red;
+              }
+        }
+    }
+}

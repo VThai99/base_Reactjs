@@ -1,5 +1,4 @@
-import logo from "./logo.svg";
-import "./App.css";
+import './scss/style.scss'
 import DefaultLayout from "./layout/DefaultLayout";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
