@@ -13,8 +13,12 @@ function Body() {
         {item.child?.length > 0 && routerPath(item.child)}
       </Route>
     ));
-  };
-  return <Routes>{routerPath(routes)}</Routes>;
+  }
+  return (
+    <div className="router">
+      <Routes>{routerPath(routes)}</Routes>
+    </div>
+  );
 }
 
 export default Body;

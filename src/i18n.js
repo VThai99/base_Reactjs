@@ -9,14 +9,17 @@ i18n
     backend: {
       loadPath: '/i18n/{{lng}}/{{ns}}.json',
     },
-    lng: lang ? lang : 'en',
-    fallbackLng: ['kr', 'en', 'ph', 'cn', 'jp'],
+    lng:lang ? lang : 'en',
+    fallbackLng: ['en', 'vn'],
     ns: ['translations'],
     defaultNS: 'translations',
     interpolation: {
       escapeValue: false,
       formatSeparator: ',',
     },
+    react: {
+      useSuspense: false
+    }
   })
 
 export default i18n

@@ -6,19 +6,76 @@
     height: 50px;
     display: flex;
     align-items: center;
-    .navs{
-        display: flex;
-        
-        justify-content: center;
-        align-items: center;
-        &__tittle{
-              color: #fff;
-              cursor: pointer;
-              list-style: none;
-              margin: 0 10px;
-              &--active{
-                  color: red;
-              }
-        }
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+.navs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__tittle{
+          color: #fff;
+          cursor: pointer;
+          list-style: none;
+          margin: 0 10px;
+          &--active{
+              color: #f27c0a;
+          }
     }
 }
+.dropdown-flag {
+    margin-right: 20px;
+    button{
+        background-color: transparent !important;
+        border-color: transparent !important;
+        &:active{
+            background-color: transparent !important;
+            border-color: transparent !important;
+        }
+    }
+    .dropdown-toggle {
+      padding: 0;
+  
+      &:focus {
+        box-shadow: none;
+      }
+      &::after {
+        display: none;
+      }
+    }
+    .dropdown-item {
+      border: 0;
+      padding: 0.5rem 0.25rem;
+        background-color: transparent;
+      &:hover {
+        background: transparent;
+      }
+    }
+    .dropdown-menu {
+      border: 0;
+      padding: 0;
+      min-width: auto;
+      box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+      background-color:rgba(255, 255, 255, 0.631) ;
+      // top: 5px !important;
+      // left: -5px !important;
+      transform: translate(-3px, 45px) !important;
+    }
+  }
+  .header{
+      &__logo{
+          display: flex;
+          align-items: center;
+          filter: contrast(0.1) invert(0%);
+          transition: all linear 0.5s;
+          i{
+              color: #000000;
+              font-weight: 700;
+          }
+          &:hover{
+            filter:  contrast(1) invert(100%);
+          }
+      }
+  }

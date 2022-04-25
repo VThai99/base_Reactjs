@@ -1,29 +1,30 @@
-import { Outlet } from "react-router-dom";
-import Test1 from "../pages/test/Test1";
-import Test11 from "../pages/test/Test11";
-import Test111 from "../pages/test/Test111";
-import Test12 from "../pages/test/Test12";
-import Test2 from "../pages/test2/Test2";
-import Test21 from "../pages/test2/Test21";
+import Contact from "../pages/contact/Contact";
+import CopyRight from "../pages/copyright/CopyRight";
+import Films from "../pages/films/Films";
+import FilmsDetail from "../pages/films/FilmsDetail";
+import Home from "../pages/home/Home";
+import Introduce from "../pages/introduce/Introduce";
 
 const routes = [
   {
-    path: "test1",
-    child: [
-      { path: null, index: true, element: <Test11 /> },
-      {
-        path: ":id",
-        child: [
-          { path: null, index: true, element: <Test12 /> },
-          { path: ":sid", element: <Test111 /> },
-        ],
-      },
-    ],
+    path: "",
+    child: [{ path: null, index: true, element: <Home /> }],
   },
   {
-    path: "test2",
-    child: [{ path: ":id", element: <Test21 /> }],
+    path: "introduce",
+    child: [{ path: null, index: true, element: <Introduce /> }],
   },
-  { path: "", element: <Test1 /> },
+  {
+    path: "film",
+    child: [{ path: null, index: true, element: <Films /> },{ path: ":id", element: <FilmsDetail /> }],
+  },
+  {
+    path: "copy-right",
+    child: [{ path: null, index: true, element: <CopyRight /> }],
+  },
+  {
+    path: "contact",
+    child: [{ path: null, index: true, element: <Contact /> }],
+  }
 ];
 export default routes;
