@@ -1,0 +1,38 @@
+.chat__content {
+  background: #ffd154;
+  border-radius: 15px;
+  padding: 0px 20px;
+  color: #002795;
+}
+.chatting {
+  background: #3d3d3d;
+  min-height: 540px;
+}
+.list__chat {
+  background: #d9d9d9;
+  color: #c20000;
+  min-height: 540px;
+  overflow: scroll;
+  .chat__item--mess {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    p {
+      margin: 0px;
+    }
+  }
+}
+.chat__item {
+  background-color: #4165c9b1;
+  color: #ffd154;
+  border-radius: 15px;
+  cursor: pointer;
+  &:hover {
+    background: #002795;
+  }
+}
+.chat-content{
+  height: 430px;
+  overflow: scroll;
+}
