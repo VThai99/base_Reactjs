@@ -1,17 +1,20 @@
 import {
-    child,
-    get, limitToLast,
-    onValue,
-    push,
-    query,
-    ref,
-    set
+  child,
+  get,
+  limitToLast,
+  onValue,
+  push,
+  query,
+  ref,
+  set,
 } from "firebase/database";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import img1 from "../../assets/image/detail1.jpg";
 import { firebase } from "../../configFireBase";
 import Typing from "./components/Typing";
 function Chating() {
+  const navigate = useNavigate();
   const uId = localStorage.getItem("userId");
   const [info, setInfo] = useState({});
   const [listUser, setListUser] = useState([]);
@@ -22,6 +25,7 @@ function Chating() {
   const [typing, setTyping] = useState([]);
   const [mess, setMess] = useState("");
   const [seen, setSeen] = useState([]);
+
   useEffect(() => {
     getInfo();
     getListUser();
@@ -32,6 +36,14 @@ function Chating() {
   useEffect(() => {
     listenNew();
   }, []);
+  useEffect(() => {
+    checkLogin();
+  }, [uId]);
+  function checkLogin() {
+    if (!uId) {
+      navigate("/login");
+    }
+  }
   function listenSeen() {
     const db = firebase.database;
     const listener = ref(db, `users/${uId}/roomchat/${roomId}/seen`);

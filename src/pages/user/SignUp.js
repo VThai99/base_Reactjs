@@ -6,8 +6,9 @@ import { firebase } from "../../configFireBase";
 function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [avata, setAvata] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   function handleSignUp() {
     const auth = firebase.auth;
     const db = firebase.database;
@@ -18,10 +19,10 @@ function SignUp() {
           id: user.uid,
           username: name,
           email: email,
-          avata: "",
+          avata: avata,
         })
           .then((res) => {
-           navigate('/login')
+            navigate("/login");
           })
           .catch((err) => console.log(err));
       })
@@ -59,6 +60,23 @@ function SignUp() {
                   className="form-control"
                   onChange={(e) => setName(e.target.value)}
                 />
+              </div>
+            </div>
+            <div className="row my-3">
+              <div className="col-md-3 d-flex justify-content-center align-items-center">
+                <p className="m-0 fw-bold ">Link Avata</p>
+              </div>
+              <div className="col-md-9">
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={(e) => setAvata(e.target.value)}
+                />
+                {avata && (
+                  <div className="mt-2">
+                    <img src={avata} alt="" className="image square size7090" />
+                  </div>
+                )}
               </div>
             </div>
             <div className="row my-3">
