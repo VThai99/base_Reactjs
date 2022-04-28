@@ -1,9 +1,10 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { child, get, push, ref, set } from "firebase/database";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { firebase } from "../../configFireBase";
 function SignUp() {
+  const passRef = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [avata, setAvata] = useState("");
@@ -12,6 +13,7 @@ function SignUp() {
   function handleSignUp() {
     const auth = firebase.auth;
     const db = firebase.database;
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((response) => {
         const user = response.user;
@@ -98,6 +100,12 @@ function SignUp() {
               <div className="col-md-9">
                 <input
                   type="text"
+                  ref={passRef}
+                  onBlur={() => {
+                    if (passRef.current.value.length < 6) {
+                      alert("Password need more than 6 characters");
+                    }
+                  }}
                   className="form-control"
                   onChange={(e) => setPassword(e.target.value)}
                 />

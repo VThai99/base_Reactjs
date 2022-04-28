@@ -16,7 +16,7 @@ function Login() {
       .then((userCredential) => {
         const user = userCredential.user;
         localStorage.setItem('userId', user.uid)
-        navigate('/contact')
+        navigate('/')
       })
       .catch((error) => {
         const errorCode = error.code;
