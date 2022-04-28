@@ -1,3 +1,4 @@
+import Chating from "../pages/chating/Chating";
 import Contact from "../pages/contact/Contact";
 import CopyRight from "../pages/copyright/CopyRight";
 import Films from "../pages/films/Films";
@@ -25,6 +26,10 @@ const routes = [
   {
     path: "contact",
     child: [{ path: null, index: true, element: <Contact /> }],
+  },
+  {
+    path: "chat",
+    child: [{ path: null, index: true, element: <Chating /> }],
   }
 ];
 export default routes;

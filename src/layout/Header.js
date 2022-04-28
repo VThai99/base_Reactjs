@@ -19,6 +19,7 @@ function Header() {
     { name: "new_films", url: "film" },
     { name: "copy_right", url: "copy-right" },
     { name: "contact", url: "contact" },
+    { name: "chat", url: "chat" },
   ];
   useEffect(() => {}, []);
   const handleGo = (url) => {
@@ -49,6 +50,7 @@ function Header() {
               {menu_arr.map((item, index) => {
                 return (
                   <li
+                    key={index}
                     className={`navs__tittle ${
                       pathname.split("/")[1] === item.url &&
                       "navs__tittle--active"

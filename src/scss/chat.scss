@@ -3,6 +3,22 @@
   border-radius: 15px;
   padding: 0px 20px;
   color: #002795;
+  position: relative;
+  .avataseen {
+    position: absolute;
+    right: -20px;
+    bottom: 50%;
+    transform: translate(0px, 50%);
+  }
+}
+.other{
+  position: relative;
+  .avataseen {
+    position: absolute;
+    right: -20px;
+    bottom: 50%;
+    transform: translate(0px, 50%);
+  }
 }
 .chatting {
   background: #3d3d3d;
@@ -32,7 +48,47 @@
     background: #002795;
   }
 }
-.chat-content{
-  height: 430px;
-  overflow: scroll;
+.chat-content {
+  min-height: 430px;
+  max-height: 430px;
+  overflow-y: scroll;
+}
+.typing {
+  color: #ffd154;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &__dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .dot {
+      display: block;
+      height: 5px;
+      width: 5px;
+      margin: 0px 5px;
+      background-color: #ffd154;
+      border-radius: 50%;
+      animation: loading 1s infinite linear;
+      &:first-child {
+        animation-delay: -0.1s;
+      }
+      &:nth-child(1) {
+        animation-delay: -0.3s;
+      }
+      &:nth-child(2) {
+        animation-delay: -0.2s;
+      }
+    }
+  }
+}
+@keyframes loading {
+  0%,
+  60%,
+  100% {
+    transform: initial;
+  }
+  30% {
+    transform: translateY(-10px);
+  }
 }
