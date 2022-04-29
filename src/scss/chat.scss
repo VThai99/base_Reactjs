@@ -92,3 +92,12 @@
     transform: translateY(-10px);
   }
 }
+.box-input-chat{
+  height: 70px;
+  position: relative;
+}
+.chat__newmess{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

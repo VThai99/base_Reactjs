@@ -430,6 +430,8 @@ function Chating() {
                   Start Chat{" "}
                 </div>
               )}
+        
+              <div className="box-input-chat">
               {typing?.find((x) => x.id != uId)?.isTyping && (
                 <Typing name={partner.username} />
               )}
@@ -456,6 +458,7 @@ function Chating() {
                 >
                   Send
                 </button>
+                </div>
               </div>
             </div>
           </div>
